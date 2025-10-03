@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 20px;
+      animation: fadeInBody 1s ease-in;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    ul li a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    ul li a:hover {
+      color: #ff00ff;
+      transform: scale(1.1);
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffff;
+      animation: slideInForm 1.5s ease forwards;
+    }
+
+    @keyframes slideInForm {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      transition: box-shadow 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      box-shadow: 0 0 5px #00ffff;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      background-color: #00ffff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff00ff;
+      transform: scale(1.05);
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeInUp 1.8s ease forwards;
+    }
+
+    .contact-info a {
+      color: #00ffff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact</h1>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="blog.html">About</a></li>
+  </ul>
+
+  <p style="text-align:center;">Welcome to the Contact page!</p>
+
+  <form id="contactForm" action="submit_contact_form.html" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <input type="submit" value="Submit" />
+  </form>
+
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+    <p><a href="tel:+92XXXXXXXXXX">Phone: +92XXXXXXXXXX</a></p>
+    <p><a href="mailto:hammaddeveloper9@gmail.com">Email: hammaddeveloper9@gmail.com</a></p>
+    <p><a href="https://github.com/hammadahmed05" target="_blank">GitHub: hammadahmed05</a></p>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        e.preventDefault();
+      } else {
+        alert('Thanks for reaching out! Your message has been sent.');
+      }
+    });
+  </script>
+</body>
+</html>

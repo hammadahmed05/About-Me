@@ -1,0 +1,104 @@
+<html lang="en">
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 30px;
+      animation: fadeInBody 1s ease-in;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    ol {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      list-style: none;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    ol li a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    ol li a:hover {
+      color: #ff00ff;
+      transform: scale(1.1);
+    }
+
+    .circle-image {
+      display: block;
+      margin: 0 auto 20px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      animation: fadeInUp 1.4s ease forwards;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 1.6s ease forwards;
+    }
+
+    .intro p {
+      margin: 10px 0;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Home</h1>
+  <ol>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="blog.html">About</a></li>
+  </ol>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5kALtoQ97pqpwqIjYfWuCBBRAR8AoWDA9Uw&sofile" alt="Profile" class="circle-image" />
+  <div class="intro">
+    <h1>Hello 👋</h1>
+    <p>My name is <strong>Hammad</strong>.</p>
+    <p>I am a <strong>Web Developer</strong> and a <strong>Full Stack Developer</strong>.</p>
+    <p>I currently live in <strong>Pakistan</strong>.</p>
+    <p>I'm learning <strong>MERN Stack Development</strong> and building cool projects every day.</p>
+  </div>
+</body>
+</html>
