@@ -469,9 +469,9 @@
     <!-- Navigation -->
     <nav class="nav-container">
         <div class="nav-content">
-            <a href="home.html" class="logo">Hammad</a>
+            <a href="index.html" class="logo">Hammad</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="blog.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -819,7 +819,7 @@
     <script>
         // highlight active nav link
         (function(){
-            const path = location.pathname.split('/').pop() || 'home.html';
+            const path = location.pathname.split('/').pop() || 'index.html';
             document.querySelectorAll('.nav-links a').forEach(a=>{ const href=a.getAttribute('href').split('/').pop(); if(href===path) a.classList.add('active'); else a.classList.remove('active'); });
             const menuToggle = document.getElementById('menuToggle');
             if(menuToggle){ menuToggle.addEventListener('click', ()=>{ const nav = document.getElementById('navLinks'); if(nav) nav.classList.toggle('active'); }); }
