@@ -5,106 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to right, #232526, #414345);
-      color: #fff;
-      padding: 30px;
-      animation: fadeInBody 1s ease-in;
-    }
-
-    @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 3em;
-      margin-bottom: 20px;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    ul {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      list-style: none;
-      margin-bottom: 30px;
-      animation: fadeInUp 1.2s ease forwards;
-    }
-
-    ul li a {
-      color: #00ffff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    ul li a:hover {
-      color: #ff00ff;
-      transform: scale(1.1);
-    }
-
-    p {
-      text-align: center;
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      animation: fadeInUp 1.4s ease forwards;
-    }
-
-    .about-section {
-      max-width: 700px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-      animation: fadeInUp 1.6s ease forwards;
-    }
-
-    .about-section p {
-      margin: 15px 0;
-      line-height: 1.6;
-    }
-
-    mark {
-      background-color: #00ffff;
-      color: #000;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <h1>About</h1>
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="blog.html">About</a></li>
-  </ul>
+  <div class="space-bg"></div>
+  <div class="nebula-bg"></div>
+  <div id="cosmicParticles"></div>
+  <div class="astronaut">🚀</div>
 
-  <p>Welcome to the About page!</p>
+  <nav>
+    <div class="nav-container">
+      <a class="logo" href="home.html">Hammad</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">About</a></li>
+       
+      </ul>
+      <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
 
-  <div class="about-section">
-    <p>This website is built to share knowledge, showcase creativity, and connect with like-minded developers and learners.</p>
-    <p>Our mission is to deliver valuable content, helpful resources, and a welcoming experience for every visitor.</p>
-    <p>Whether you're here to learn, explore, or collaborate — you're in the right place.</p>
-    <p><mark>I am also a full MERN stack developer</mark>, passionate about building scalable web applications and learning new technologies.</p>
-  </div>
+  <main class="container">
+    <h1 class="fadeInUp">About</h1>
+    <p class="fadeInUp" style="text-align:center; margin-bottom:20px">Welcome — learn more about the project and me.</p>
+
+    <section class="card about-section">
+      <h2>Who I am</h2>
+      <p>I'm Hammad, a Full Stack developer who enjoys crafting performant web apps and playful, clean UX — often with a spacey theme.</p>
+
+      <h3>Skills & Focus</h3>
+      <ul>
+        <li>MERN stack (MongoDB, Express, React, Node.js)</li>
+        <li>Modern CSS & animation</li>
+        <li>Web performance & accessibility</li>
+      </ul>
+
+      <h3>Why this site</h3>
+      <p>This portfolio/demo site is meant as a showcase of interactive UI patterns and small utility features (lightbox, theme, local persistence, tiny animations).</p>
+    </section>
+  </main>
+
+  <footer>© 2025 Hammad — Built with care</footer>
+
+  <script src="assets/scripts.js"></script>
+  <script>
+    (function(){
+      const path = location.pathname.split('/').pop() || 'home.html';
+      document.querySelectorAll('.nav-links a').forEach(a=>{ const href=a.getAttribute('href').split('/').pop(); if(href===path) a.classList.add('active'); else a.classList.remove('active'); });
+      const menuToggle = document.getElementById('menuToggle'); if(menuToggle) menuToggle.addEventListener('click', ()=>document.getElementById('navLinks').classList.toggle('active'));
+    })();
+  </script>
 </body>
 </html>
