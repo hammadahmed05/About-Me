@@ -1,171 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Hammad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* Base Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      padding: 20px;
-      animation: fadeInBody 1s ease-in;
-    }
-
-    @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    ul {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      list-style: none;
-      margin-bottom: 30px;
-      animation: fadeInUp 1.2s ease forwards;
-    }
-
-    ul li a {
-      color: #00ffff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    ul li a:hover {
-      color: #ff00ff;
-      transform: scale(1.1);
-    }
-
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00ffff;
-      animation: slideInForm 1.5s ease forwards;
-    }
-
-    @keyframes slideInForm {
-      from { opacity: 0; transform: translateX(-100px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
-      transition: box-shadow 0.3s;
-    }
-
-    input:focus, textarea:focus {
-      box-shadow: 0 0 5px #00ffff;
-      outline: none;
-    }
-
-    input[type="submit"] {
-      background-color: #00ffff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #ff00ff;
-      transform: scale(1.05);
-    }
-
-    .contact-info {
-      text-align: center;
-      margin-top: 30px;
-      animation: fadeInUp 1.8s ease forwards;
-    }
-
-    .contact-info a {
-      color: #00ffff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-info a:hover {
-      color: #ff00ff;
-    }
+    :root{--accent:#00d4ff;--accent2:#7c3aed;--bg1:#0f0f23;--bg2:#16213e}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,Segoe UI,Roboto,Arial;color:#fff;background:radial-gradient(ellipse at center,var(--bg2) 0%, #0b0b18 60%);}
+    .space-bg,.nebula-bg{position:fixed;inset:0;pointer-events:none}
+    .space-bg{background:radial-gradient(2px 2px at 20px 30px,#eee,transparent),radial-gradient(2px 2px at 40px 70px,rgba(255,255,255,0.8),transparent);background-repeat:repeat;background-size:200px 100px;opacity:0.6}
+    .nebula-bg{background:radial-gradient(circle at 20% 80%, rgba(120,119,198,0.12) 0%, transparent 50%),radial-gradient(circle at 80% 20%, rgba(255,119,198,0.08) 0%, transparent 50%);mix-blend-mode:screen}
+    nav{position:fixed;top:0;left:0;right:0;background:rgba(12,17,30,0.6);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:40}
+    .nav-container{max-width:1200px;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:'Orbitron',monospace;font-weight:700;color:var(--accent);text-decoration:none;font-size:1.4rem}
+    .nav-links{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;padding:.6rem 1rem;border-radius:14px;border:1px solid transparent;transition:all .2s}
+    .nav-links a:hover{color:var(--accent);background:rgba(0,212,255,0.04);border-color:rgba(0,212,255,0.06)}
+    .nav-links a.active{color:var(--accent);background:linear-gradient(90deg,var(--accent),var(--accent2, #7c3aed));box-shadow:0 8px 30px rgba(0,212,255,0.08)}
+    .menu-toggle{display:none}
+    main{padding-top:96px;max-width:1100px;margin:0 auto;padding:4rem 1rem}
+    .contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.04);border-radius:16px;padding:2rem;box-shadow:0 10px 40px rgba(0,0,0,0.6);display:grid;grid-template-columns:1fr 360px;gap:2rem}
+    h1{font-family:'Orbitron',monospace;margin-bottom:.25rem}
+    p.lead{color:rgba(255,255,255,0.8);margin-bottom:1.2rem}
+    label{display:block;font-weight:600;margin-top:.75rem;font-size:.9rem}
+    input[type=text],input[type=email],textarea{width:100%;padding:.8rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;margin-top:.5rem}
+    textarea{min-height:140px;resize:vertical}
+    .actions{display:flex;gap:1rem;align-items:center;margin-top:1rem}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1.1rem;border-radius:999px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 12px 30px rgba(0,212,255,0.08)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.9)}
+    .info-panel{padding:1rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .contact-method{display:flex;align-items:center;gap:.75rem;padding:.6rem;border-radius:8px;margin-bottom:.6rem;background:rgba(255,255,255,0.02)}
+    .small{font-size:.9rem;color:rgba(255,255,255,0.8)}
+    .success{display:none;padding:1rem;border-radius:8px;background:linear-gradient(90deg,#10b981,#06b6d4);color:#042; font-weight:700;margin-top:1rem}
+    @media(max-width:900px){.contact-card{grid-template-columns:1fr;}.menu-toggle{display:block}.nav-links{display:none}.nav-links.active{display:flex;flex-direction:column;gap:.5rem;padding:1rem;background:rgba(12,17,30,0.7);position:absolute;left:1rem;right:1rem;top:64px;border-radius:8px}}
   </style>
 </head>
 <body>
-  <h1>Contact</h1>
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="blog.html">About</a></li>
-  </ul>
+  <div class="space-bg" aria-hidden="true"></div>
+  <div class="nebula-bg" aria-hidden="true"></div>
 
-  <p style="text-align:center;">Welcome to the Contact page!</p>
+  <nav>
+    <div class="nav-container">
+      <a class="logo" href="home.html">Hammad</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">About</a></li>
+       
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
 
-  <form id="contactForm" action="submit_contact_form.html" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required />
+  <main>
+    <section class="contact-card" aria-labelledby="contactTitle">
+      <div>
+        <h1 id="contactTitle">Let's build something together</h1>
+        <p class="lead">Tell me about your project, timeline, and budget. I reply within 48 hours. Or use the quick actions on the right.</p>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required />
+        <form id="contactForm" novalidate>
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name">
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" required placeholder="you@domain.com">
 
-    <input type="submit" value="Submit" />
-  </form>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Brief project description"></textarea>
 
-  <div class="contact-info">
-    <h2>Contact Information</h2>
-    <p><a href="tel:+92XXXXXXXXXX">Phone: +92XXXXXXXXXX</a></p>
-    <p><a href="mailto:hammaddeveloper9@gmail.com">Email: hammaddeveloper9@gmail.com</a></p>
-    <p><a href="https://github.com/hammadahmed05" target="_blank">GitHub: hammadahmed05</a></p>
-  </div>
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <button type="button" id="clearBtn" class="btn btn-ghost">Clear</button>
+            <div id="formStatus" class="success" role="status">Message sent — thank you!</div>
+          </div>
+        </form>
+      </div>
+
+      <aside class="info-panel" aria-label="Contact options">
+        <h3 class="small">Contact</h3>
+        <div class="contact-method"><strong>📧</strong><div><div class="small">Email</div><div><a id="emailLink" href="mailto:hammaddeveloper9@gmail.com">hammaddeveloper9@gmail.com</a></div></div></div>
+        <div class="contact-method"><strong>📞</strong><div><div class="small">Phone</div><div><a href="tel:+92XXXXXXXXXX">+92XXXXXXXXXX</a></div></div></div>
+        <div style="height:8px"></div>
+        <button id="copyEmail" class="btn btn-ghost" title="Copy email to clipboard">Copy email</button>
+        <button id="downloadVcard" class="btn btn-ghost" title="Download vCard">Download vCard</button>
+
+        <hr style="margin:12px 0;border-color:rgba(255,255,255,0.04)">
+        <p class="small">Prefer a direct link? <a href="https://github.com/hammadahmed05" target="_blank" rel="noopener" style="color:var(--accent)">View GitHub</a></p>
+      </aside>
+    </section>
+  </main>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+    // Active nav highlighting + mobile toggle
+    (function(){
+      const path = location.pathname.split('/').pop() || 'home.html';
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        const href = a.getAttribute('href').split('/').pop();
+        if(href===path) a.classList.add('active'); else a.classList.remove('active');
+      });
+      const menuToggle = document.getElementById('menuToggle');
+      if(menuToggle){menuToggle.addEventListener('click', ()=>document.getElementById('navLinks').classList.toggle('active'))}
+    })();
 
-      if (!name || !email || !message) {
-        alert('Please fill out all fields.');
+    // Simple particle creator (lightweight)
+    (function createParticles(){
+      const container = document.getElementById('cosmicParticles');
+      if(!container){ const c = document.createElement('div'); c.id='cosmicParticles'; document.body.appendChild(c); }
+      // no heavy work here to keep page responsive
+    })();
+
+    // Form validation & fake send
+    (function(){
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const clearBtn = document.getElementById('clearBtn');
+
+      function showStatus(msg){status.textContent=msg; status.style.display='block'; setTimeout(()=>status.style.display='none',4000)}
+
+      form.addEventListener('submit', function(e){
         e.preventDefault();
-      } else {
-        alert('Thanks for reaching out! Your message has been sent.');
-      }
-    });
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        if(!name || !email || !message){ alert('Please fill all fields.'); return; }
+
+        // Basic email pattern
+        const re = /^\S+@\S+\.\S+$/;
+        if(!re.test(email)){ alert('Please enter a valid email.'); return; }
+
+        // Simulate async send
+        const btn = form.querySelector('.btn-primary');
+        btn.disabled = true; btn.textContent = 'Sending...';
+        setTimeout(()=>{
+          btn.disabled = false; btn.textContent = 'Send message';
+          showStatus('Message sent — thanks!');
+          form.reset();
+        }, 900);
+      });
+
+      clearBtn.addEventListener('click', ()=>form.reset());
+    })();
+
+    // Copy email and vCard
+    (function(){
+      const copyBtn = document.getElementById('copyEmail');
+      const emailLink = document.getElementById('emailLink');
+      const vcardBtn = document.getElementById('downloadVcard');
+      if(copyBtn && emailLink){ copyBtn.addEventListener('click', async ()=>{
+        try{ await navigator.clipboard.writeText(emailLink.textContent); copyBtn.textContent='Copied ✓'; setTimeout(()=>copyBtn.textContent='Copy email',2000)}catch(e){alert('Copy failed, please copy manually.')}
+      })}
+
+      if(vcardBtn){ vcardBtn.addEventListener('click', ()=>{
+        const name='Hammad'; const email='hammaddeveloper9@gmail.com'; const tel='+92XXXXXXXXXX';
+        const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nEMAIL;TYPE=INTERNET:${email}\nTEL:${tel}\nEND:VCARD`;
+        const blob = new Blob([vcard],{type:'text/vcard'}); const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href=url; a.download='hammad.vcf'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+      })}
+    })();
   </script>
 </body>
 </html>
